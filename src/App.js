@@ -14,11 +14,20 @@ class App extends React.Component{
     handleAddTask = () => { //depois cria uma funçao pra manegar os estados do app
         if(this.state.newTask == '') return;
 
-        const newTask = [... this.state.tasks, this.state.newTask];
+        const newTasks = [... this.state.tasks, this.state.newTask];
         this.setState({
           newTask: '',
-          tasks: newTask
+          tasks: newTasks
         });
+    }
+
+    handleDeleteTask = (index) => {
+      const newTasks = [... this.state.tasks];
+      newTasks.splice(index, 1);
+      this.setState({
+        tasks: newTasks
+      })
+
     }
 
     render(){
@@ -32,14 +41,21 @@ class App extends React.Component{
              </input>
 
              <button
-             onClick={this.handleAddTask}>
+             onClick={this.handleAddTask}
+             >
               Adicionar</button>
 
               <ul> {/*isso aqui é pra criar uma lista na tela(html basico) */}
                {this.state.tasks.map((task, index) => (
                  <li key={index}>
                    {task}
+                   <button
+                    onClick={() => this.handleDeleteTask(index)}
+                    >
+                     Excluir
+                   </button>
                  </li>
+
                ) )}
              </ul>
 
