@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+
+    constructor(props){ //primeiro tem que construir o construtor
+      super(props);
+      this.state = { //depois definir estados
+        newTask: "",
+        tasks: []
+      };
+    }
+
+    handleAddTask = () => { //depois cria uma funçao pra manegar os estados do app
+        if(this.state.newTask == '') return;
+
+        const newTask = [... this.state.tasks, this.state.newTask];
+        this.setState({
+          newTask: '',
+          tasks: newTask
+        });
+    }
+
+    render(){
+      return (
+        <div>
+
+            <input type="text"
+             placeholder="Nova Tarefa"
+             value={this.state.newTask} 
+             onChange={(event) => this.setState ({newTask: event.target.value})}>
+             </input>
+
+        </div>
+      );
+    }
+
 }
 
 export default App;
