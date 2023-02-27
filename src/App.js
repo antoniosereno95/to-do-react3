@@ -35,7 +35,7 @@ class App extends React.Component{
              onClick={this.handleAddTask}>
               Adicionar</button>
 
-             <ul> //isso aqui é pra criar uma lista na tela(html basico)
+              <ul> {/*isso aqui é pra criar uma lista na tela(html basico) */}
                {this.state.tasks.map((task, index) => (
                  <li key={index}>
                    {task}
