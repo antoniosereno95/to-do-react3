@@ -35,6 +35,14 @@ class App extends React.Component{
              onClick={this.handleAddTask}
              >Adicionar</button>
 
+             <ul>
+               {this.state.tasks.map((task, index) => (
+                 <li key={index}>
+                   {task}
+                 </li>
+               ) )}
+             </ul>
+
         </div>
       );
     }
