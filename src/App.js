@@ -31,6 +31,8 @@ class App extends React.Component{
              onChange={(event) => this.setState ({newTask: event.target.value})}>
              </input>
 
+             <button>Adicionar</button>
+
         </div>
       );
     }
