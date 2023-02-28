@@ -1,6 +1,5 @@
 import React from "react";
 
-
 class App extends React.Component{
 
     constructor(props){ //primeiro tem que construir o construtor
