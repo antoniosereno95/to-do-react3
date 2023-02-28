@@ -1,0 +1,21 @@
+/*Adicionar estilos ao input*/
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: black 1px solid;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.add-task-button{
+    background-color: aqua;
+    color: aliceblue;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
