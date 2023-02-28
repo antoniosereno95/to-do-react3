@@ -41,6 +41,7 @@ class App extends React.Component{
              </input>
 
              <button
+             className="add-task-button"
              onClick={this.handleAddTask}
              >
               Adicionar</button>
